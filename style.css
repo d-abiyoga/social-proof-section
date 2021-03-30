@@ -10,8 +10,11 @@ body {
     font-size: 15px;
     font-family: 'Spartan', sans-serif;
     height: 100%;
-
+    
     /* Background not yet coded*/
+    background-image: url('images/bg-pattern-top-mobile.svg'), url('images/bg-pattern-bottom-mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, right bottom;
 }
 
 /* || VARIABLE */
@@ -129,14 +132,20 @@ body {
 
 /* RESPONSIVE DESIGN FOR IPAD AND DESKTOP*/
 @media only screen and (min-width: 1000px) {
+    body {
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+    }
+    
     .container {
         flex-flow: row;
         width: 80vw;
         flex-wrap: wrap;
         padding-top: 0;
+        padding-bottom: 12.5vh;
         margin-top: 16vh;
         margin-bottom: 0;
-        height: 71.5vh;
+        height: 84vh;
     }
 
     /* Title desktop design */
@@ -199,5 +208,9 @@ body {
     
     .rating-card > * {
         display: inline;
+    }
+
+    .attribution {
+        margin-top: -1rem;
     }
 }
