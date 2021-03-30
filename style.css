@@ -9,6 +9,9 @@
 body {
     font-size: 15px;
     font-family: 'Spartan', sans-serif;
+    height: 100%;
+
+    /* Background not yet coded*/
 }
 
 /* || VARIABLE */
@@ -20,30 +23,17 @@ body {
     --white: hsl(0,0%,100%);
 }
 
-/* ||  UTILITIES*/
-/* testimonial-card > * {
-    border-radius: 1rem;
-} */
-
 /* || LAYOUTING*/
 .container {
     display: flex;
     flex-wrap: wrap;
-    /* flex-flow: wrap; */
     box-sizing: border-box;
     padding-top: 3rem;
     width: 85vw;
     margin: 7.5vw;
-
-    /* TEST ONLY */
-    /* border: solid blue 4px; */
+    
     justify-content: center;
     align-items: center;
-    align-self: center;
-}
-
-.title-wrapper {
-    /* border: solid black 4px; */
 }
 
 .title {
@@ -55,11 +45,11 @@ body {
 .subtitle {
     text-align: center;
     color: var(--dark-grayish-magenta);
+    line-height: 1.3rem;
 }
 
 /* Rating */
-
-.rating-wrapper {
+.rating-cards-wrapper {
     /* width: inherit; */
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -74,11 +64,11 @@ body {
     background-color: var(--light-grayish-magenta);
     
     font-weight: 700;
+    font-size: 12px;
     line-height: 1.5rem;
-    padding: 1rem 1rem 1rem 1rem;
-
+    padding: 1rem 2rem 1rem 2rem;
+    
     text-align: center;
-    /* align-self: center; */
     border-radius: 0.5rem;
     
     margin-bottom: 1rem;
@@ -96,60 +86,118 @@ body {
 }
 
 /* Review Card */
-.review-card {
-    /* border: solid blue 1px; */
-}
 
-.card {
-    /* border: solid red 1px; */
+.review-card {
     color: var(--white);
     background-color: var(--very-dark-magenta);
     border-radius: 0.5rem;
-    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    padding: 2rem 2rem 2rem 2rem;
     margin-bottom: 1rem;
 }
 
 .reviewer-identity {
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
     display: flex;
     flex: wrap;
 }
-
-
-/* .reviewer-photo-wrapper {
-    display: inline;
-} */
 
 .reviewer-photo {
     height: 42px;
     width: 42px;
     border-radius: 50%;
     margin-right: 1rem;
-    /* display: inline-block; */
-    /* position: relative; */
 }
 
-/* .test {
-    display: ;
-    flex-wrap: wrap;
-    border: white 1px solid;
-} */
 
 .reviewer-title {
     color: var(--soft-pink);
 }
 
 .testimony {
-    font-size: 0.8rem;
-    line-height: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1.3rem;
 }
 
 /* ATTRIBUTION */
 .attribution {
     font-size: 11px;
     text-align: center;
-  }
-  .attribution a {
+}
+.attribution a {
     color: hsl(228, 45%, 44%);
-  }
+}
 
+/* RESPONSIVE DESIGN FOR IPAD AND DESKTOP*/
+@media only screen and (min-width: 1000px) {
+    .container {
+        flex-flow: row;
+        width: 80vw;
+        flex-wrap: wrap;
+        padding-top: 0;
+        margin-top: 16vh;
+        margin-bottom: 0;
+        height: 71.5vh;
+    }
+
+    /* Title desktop design */
+    .title-wrapper {
+        width: 50%;
+        align-self: flex-start;
+        padding-right: 7.5%;
+    }
+
+    .title, .subtitle {
+        text-align: start;
+    }
+
+    .title {
+        font-size: 2.75rem
+    }
+
+    /* Rating card desktop design */
+    .rating-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 37.5vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .rating-card {
+        width: 82.25%;
+        text-align: start;
+    }
+
+    .rating-card p {
+        margin-left: 2rem;
+    }
+    
+    /* Review Card desktop design */
+    .review-cards-wrapper {
+        display: flex;
+        justify-content: space-between;
+        height: 46.5%;
+    }
+    .review-card {
+        width: 31%;
+        margin-bottom: 0;
+        height: 90%
+    }
+    
+    /* Card Alignment */
+    .card-1 {
+        align-self: flex-start;
+    }
+
+    .card-2 {
+        align-self: center;
+    }
+
+    .card-3 {
+        align-self: flex-end;
+    }
+    
+    .rating-card > * {
+        display: inline;
+    }
+}
